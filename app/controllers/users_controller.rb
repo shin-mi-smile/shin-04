@@ -66,9 +66,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
     # Use callbacks to share common setup or constraints between actions.
-    def set_index_title
-      @index_title = 'ユーザー一覧'
+     def set_index_title
+    @index_title = 'ユーザー一覧'
   end
+
   def set_show_title
     @show_title = 'ユーザー詳細'
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'WelcomesController', type: :request do
   describe '/welcomes へアクセスした時に' do
     let(:path) { '/welcomes' }

@@ -1,21 +1,22 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "users/edit", type: :view do
+RSpec.describe 'users/edit', type: :view do
   before(:each) do
     @user = assign(:user, User.create!(
-      name: "MyString",
-      age: 1
-    ))
+                            name: 'MyString',
+                            age: 1
+                          ))
   end
 
-  it "renders the edit user form" do
+  it 'renders the edit user form' do
     render
 
-    assert_select "form[action=?][method=?]", user_path(@user), "post" do
+    assert_select 'form[action=?][method=?]', user_path(@user), 'post' do
+      assert_select 'input[name=?]', 'user[name]'
 
-      assert_select "input[name=?]", "user[name]"
-
-      assert_select "input[name=?]", "user[age]"
+      assert_select 'input[name=?]', 'user[age]'
     end
   end
 end

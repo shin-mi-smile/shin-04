@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    @users = User.where(age: 20..50)
+    @users = User.order(:age)
   end
 
   # GET /users/1 or /users/1.json
@@ -13,6 +14,8 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.name = 'らんてくん'
+    @user.age = 20
   end
 
   # GET /users/1/edit
